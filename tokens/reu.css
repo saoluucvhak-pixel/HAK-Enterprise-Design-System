@@ -1,0 +1,16 @@
+/* Chủ đề thứ 5 "reu" (xanh rêu / kem, tiêu đề bảng nền tối) — tùy chọn, KHÔNG phải mặc định (mặc định là luxe).
+   Nguồn bảng màu: skill quan-ly-bang-me-bang-con (references/style-tokens.css). Đã chỉnh vài giá trị để chữ đạt tương phản AA ≥ 4,5:1
+   (xem tests/contrast.test.js): --mut-aa tối hơn --mut gốc; nút chính dùng xanh đậm #2F5B45.
+   Dùng: nạp SAU tokens/luxe.css, đặt <html data-skin="reu"> (tối: thêm data-theme="dark"). */
+[data-skin="reu"]{--brand:#2F5B45;--brand2:#3E7057;--brandH:#244937;--brandA:#1b3a2b;--brandSoft:rgba(62,112,87,.12);--onBrand:#fff;
+--bg:#F1EFE9;--card:#fff;--ink:#1C1C1A;--mut:#77756A;--line:#E5E2D8;--line2:#ECE9E0;--ctl:#D6D2C5;--th:#141F19;--thInk:#fff;--hover:#F4F1EA;--field:#fff;
+--sb:linear-gradient(180deg,#141F19 0%,#101812 100%);--sbText:#cfd6d0;--sbMut:#93a096;--sbLine:rgba(217,154,78,.18);
+--warnBg:#FBF1E3;--warnBd:#EBCFA6;--warnFg:#6E4A14;--okBg:#E7F0EA;--okFg:#2F5B45;--red:#B4453B;--redBg:#F8E6E3;
+--infoBg:#EEF2EF;--infoBd:#CCD8CF;--infoFg:#24402f;--edit:#D99A4E;--editBg:#FDF6EC;--focus:rgba(62,112,87,.28);
+--shadow:0 1px 2px rgba(20,31,25,.05),0 8px 22px rgba(20,31,25,.07);--shadowH:0 12px 28px rgba(20,31,25,.18);--r:12px;
+--c1:#E7F0EA;--c1f:#2F5B45;--deep:#141F19;--champ:#D99A4E;--champL:#ecc48f;--mut-aa:#625f55}
+[data-skin="reu"][data-theme="dark"]{--brand:#8fc3a6;--brand2:#a9d4bb;--brandH:#a9d4bb;--brandA:#c2e3d0;--brandSoft:rgba(143,195,166,.16);--onBrand:#0d1a13;
+--bg:#0e1511;--card:#151e18;--ink:#e6e8e3;--mut:#9aa69d;--line:#26332b;--line2:#1d2822;--ctl:#36463c;--th:#0a100c;--thInk:#e6e8e3;--hover:#1a251f;--field:#101813;
+--warnBg:#2a2213;--warnFg:#f0cf8f;--okBg:rgba(143,195,166,.14);--okFg:#a9d4bb;--red:#ff8a7a;--redBg:#3a1e17;
+--infoBg:#18241d;--infoFg:#c7dccd;--focus:rgba(143,195,166,.3);--edit:#e0a948;--editBg:#251f12;
+--shadow:0 1px 2px rgba(0,0,0,.35),0 8px 22px rgba(0,0,0,.3);--shadowH:0 10px 26px rgba(0,0,0,.45);--mut-aa:#9aa69d;color-scheme:dark}

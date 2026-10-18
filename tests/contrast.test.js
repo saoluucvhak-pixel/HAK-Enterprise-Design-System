@@ -40,3 +40,27 @@ for (const [name, T] of [['sáng', LIGHT], ['tối', DARK]]) {
     }
   });
 }
+
+// ---- Chủ đề thứ 5 "reu" (tokens/reu.css) — nạp sau luxe ----
+const reuCss = fs.readFileSync(path.join(__dirname, '..', 'tokens', 'reu.css'), 'utf8');
+function blockIn(text, selector) {
+  const vars = {};
+  for (const m of text.matchAll(/([^{}]+)\{([^{}]*)\}/g)) {
+    if (m[1].replace(/\/\*[\s\S]*?\*\//g, '').trim() !== selector) continue;
+    for (const v of m[2].matchAll(/--([\w-]+)\s*:\s*([^;]+)/g)) vars[v[1]] = v[2].trim();
+  }
+  return vars;
+}
+const REU = { ...root, ...blockIn(reuCss, '[data-skin="reu"]') };
+const REU_DARK = { ...root, ...dark, ...REU, ...blockIn(reuCss, '[data-skin="reu"][data-theme="dark"]') };
+for (const [name, T] of [['sáng', REU], ['tối', REU_DARK]]) {
+  test(`reu ${name}: chữ đạt AA ≥ 4,5:1 (kể cả tiêu đề bảng nền tối)`, () => {
+    assert.ok(Object.keys(T).length > 20, 'đọc được token reu');
+    // reu: tiêu đề bảng nền tối dùng chữ --thInk, nên thay cặp mut-aa/th bằng thInk/th
+    for (const [fg, bg] of [...PAIRS.filter(p => !(p[0] === 'mut-aa' && p[1] === 'th')), ['thInk', 'th'], ['mut-aa', 'card'], ['okFg', 'okBg'], ['infoFg', 'infoBg']]) {
+      const f = T[fg], b = T[bg];
+      if (!isHex(f) || !isHex(b)) continue;
+      assert.ok(ratio(f, b) >= 4.5, `${fg} trên ${bg} (${f} / ${b}) = ${ratio(f, b).toFixed(2)}:1`);
+    }
+  });
+}

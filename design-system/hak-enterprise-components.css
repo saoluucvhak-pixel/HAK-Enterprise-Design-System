@@ -14,7 +14,7 @@
 .hak-ui .hak-num {text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
 /* Bảng: tiêu đề cố định khi cuộn trong vùng bảng */
 .hak-ui .hak-table {border-collapse:collapse;width:100%}
-.hak-ui .hak-table th {position:sticky;top:0;z-index:1;background:var(--th);color:var(--ink);text-align:left;font-weight:600}
+.hak-ui .hak-table th {position:sticky;top:0;z-index:1;background:var(--th);color:var(--thInk, var(--ink));text-align:left;font-weight:600}
 .hak-ui .hak-table th, .hak-ui .hak-table td {padding:8px 10px;border-bottom:1px solid var(--line2, var(--line))}
 .hak-ui .hak-table tbody tr:hover {background:var(--hover)}
 .hak-ui .hak-table tr[aria-selected="true"] {background:var(--brandSoft)}
@@ -34,3 +34,60 @@
 .hak-ui .hak-sr-only {position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 /* Tôn trọng người dùng giảm chuyển động */
 @media (prefers-reduced-motion:reduce){.hak-ui *, .hak-ui *::before, .hak-ui *::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+
+/* ---- Master–Detail component (components/master-detail.js). Chỉ dùng token. ---- */
+.hak-md{display:block;min-width:0;color:var(--ink);font-size:14px;line-height:1.45}
+.hak-md-head{display:flex;flex-direction:column;gap:6px;margin-bottom:12px}
+.hak-md-breadcrumb ol{display:flex;flex-wrap:wrap;gap:4px;list-style:none;margin:0;padding:0;font-size:12px;color:var(--mut-aa, var(--mut))}
+.hak-md-breadcrumb li+li::before{content:"›";margin-right:4px;color:var(--mut-aa, var(--mut))}
+.hak-md-breadcrumb [aria-current=page]{color:var(--ink);font-weight:600}
+.hak-md .hak-md-link{border:0;background:transparent;color:var(--brand);padding:0;min-height:0;cursor:pointer;text-decoration:underline;font:inherit}
+.hak-md-title-row{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.hak-md-title-row h1{margin:0;font-size:22px;line-height:1.3;letter-spacing:-.3px}
+.hak-md-actions{display:flex;gap:6px;flex-wrap:wrap}
+.hak-md-metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-bottom:12px}
+.hak-md-metric{border:1px solid var(--line);background:var(--card);border-radius:var(--r, 12px);padding:10px 12px;min-width:0}
+.hak-md-metric small{display:block;font-size:12px;color:var(--mut-aa, var(--mut))}
+.hak-md-metric strong{display:block;font-size:22px;line-height:1.3}
+.hak-md .hak-panel{box-shadow:var(--shadow)}
+.hak-md-pane-title{margin:0;font-size:15px;font-weight:700;flex:1 1 auto}
+.hak-md-search{flex:1 1 220px;max-width:340px}
+.hak-md-search input{width:100%;min-height:32px;border:1px solid var(--ctl);border-radius:8px;padding:0 10px;background:var(--field);color:var(--ink);font:inherit}
+.hak-md .hak-table tbody tr[tabindex]{cursor:pointer}
+.hak-md .hak-table td.hak-md-center{text-align:center}
+.hak-md-actions-col{width:1%}
+.hak-md-row-actions{white-space:nowrap;text-align:right}
+.hak-md-row-actions .hak-btn{min-height:28px;padding:0 8px;margin-left:4px;font-size:12px}
+.hak-md-tag{display:inline-block;padding:1px 8px;border-radius:999px;font-size:12px;white-space:nowrap;background:var(--infoBg);color:var(--infoFg)}
+.hak-md-tag[data-status=current]{background:var(--okBg);color:var(--okFg)}
+.hak-md-tag[data-status=future]{background:var(--warnBg);color:var(--warnFg)}
+.hak-md-tag[data-status=expired]{background:var(--th);color:var(--mut-aa, var(--mut))}
+.hak-md-detail{padding-bottom:8px}
+.hak-md-detail-head{border-bottom:1px solid var(--line)}
+.hak-md-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:12px;padding:0}
+.hak-md-field dt{font-size:12px;color:var(--mut-aa, var(--mut));margin-bottom:4px}
+.hak-md-field dd{margin:0;border:1px solid var(--line);background:var(--bg);padding:7px 9px;border-radius:6px;min-height:34px;overflow-wrap:anywhere}
+.hak-md-tabs{margin:4px 12px 0;padding:0}
+.hak-md .hak-md-tab{border:0;border-radius:0;background:transparent;color:var(--mut-aa, var(--mut));padding:8px 10px;min-height:36px;font:inherit;cursor:pointer}
+.hak-md .hak-md-tab[aria-selected=true]{color:var(--brand);border-bottom:2px solid var(--brand);font-weight:700}
+.hak-md-count{font-variant-numeric:tabular-nums;color:var(--mut-aa, var(--mut));font-weight:400}
+.hak-md-tabpanel{padding:0 12px}
+.hak-md-overlay{position:fixed;inset:0;background:var(--focus);display:flex;justify-content:flex-end;z-index:50}
+.hak-md-drawer{width:min(460px,100%);height:100%;background:var(--card);color:var(--ink);box-shadow:var(--shadowH);display:flex;flex-direction:column;border-radius:var(--r, 12px) 0 0 var(--r, 12px)}
+.hak-md-drawer-head{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:12px 16px;border-bottom:1px solid var(--line)}
+.hak-md-drawer-head h2{margin:0;font-size:16px}
+.hak-md .hak-md-close{min-width:32px}
+.hak-md-form{flex:1;overflow:auto;padding:12px 16px;display:flex;flex-direction:column;gap:12px}
+.hak-md-input label{display:block;font-size:13px;font-weight:600;margin-bottom:4px}
+.hak-md-input input:not([type=checkbox]),.hak-md-input select,.hak-md-input textarea{width:100%;min-height:34px;border:1px solid var(--ctl);border-radius:8px;padding:6px 10px;background:var(--field);color:var(--ink);font:inherit}
+.hak-md-req{color:var(--red)}
+.hak-md-hint{font-size:12px;margin-top:3px}
+.hak-md-error-summary{border:1px solid var(--red);background:var(--redBg);color:var(--ink);border-radius:8px;padding:10px 12px}
+.hak-md-error-summary a{color:var(--red)}
+.hak-md-drawer-foot{display:flex;justify-content:flex-end;gap:8px;padding-top:8px;border-top:1px solid var(--line);position:sticky;bottom:0;background:var(--card)}
+.hak-md-toast{min-height:0;margin-top:8px;font-size:13px}
+.hak-md-toast:empty{display:none}
+.hak-md-toast[data-kind=ok]{color:var(--okFg)}
+.hak-md-toast[data-kind=warn]{color:var(--warnFg)}
+.hak-md-toast[data-kind=error]{color:var(--red)}
+@media (max-width:700px){.hak-md-fields{grid-template-columns:1fr}.hak-md-drawer{border-radius:0}}

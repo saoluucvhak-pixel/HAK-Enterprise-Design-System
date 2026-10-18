@@ -1,9 +1,25 @@
 {
   "name": "@hak/enterprise-design-system",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "private": false,
   "description": "HAK Enterprise design tokens and layout standard (luxe V10.3 / V10.4 reference)",
-  "scripts": { "test": "node --test tests/*.test.js" },
-  "engines": { "node": ">=18" },
-  "license": "UNLICENSED"
+  "scripts": {
+    "test": "node --test tests/*.test.js",
+    "demo": "node scripts/build-demo.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "jsdom": "^24.1.3"
+  },
+  "main": "components/master-detail.js",
+  "files": [
+    "components",
+    "design-system",
+    "tokens",
+    "docs",
+    "README.md"
+  ]
 }

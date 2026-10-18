@@ -7,6 +7,8 @@ Thư viện tiêu chuẩn giao diện dùng chung cho các ứng dụng HAK (Ele
 - `design-system/hak-workspace-layout.css` — bố cục workspace (master–detail, tiêu đề, lưới) — bản đồng bộ với `workspace-v104.css` của ứng dụng.
 - `design-system/hak-enterprise-components.css` — thành phần dùng chung (khung, thanh công cụ, tab chi tiết; từ V10.5 thêm bảng, số liệu, trạng thái rỗng/tải/lỗi, nút, lỗi form, giảm chuyển động). Đây là **bản duy nhất** — thư mục `css/` cũ đã bỏ vì trùng y hệt.
 - `docs/UX_RULES.md` — quy tắc UX của HAK, kết hợp với skill **UI UX Pro Max** trong `HAK_AI_SKILLS`.
+- `components/master-detail.js` — **bộ component bảng cha–con dùng chung** (danh sách, hồ sơ, tab con, Side Drawer, đào sâu nhiều cấp, tự đóng phiên bản, xóa có ràng buộc, móc khóa kỳ). Hướng dẫn: `docs/MASTER_DETAIL.md`; demo: `examples/master-detail.html`.
+- `tokens/reu.css` — chủ đề thứ 5 **xanh rêu** (tùy chọn; mặc định vẫn là luxe).
 - `design-system/V10.4-LAYOUT.md` — quy ước bố cục danh mục dùng chung và tiêu chí kiểm tra 1366×768 / 1920×1080.
 - `docs/DESIGN_SYSTEM_V10_4.md` — tham chiếu các chủ đề `luxe`, `classic`, `neutral`, `champagne` và mẫu cha–con.
 
