@@ -7,6 +7,7 @@ Thư viện tiêu chuẩn giao diện dùng chung cho các ứng dụng HAK (Ele
 - `design-system/hak-workspace-layout.css` — bố cục workspace (master–detail, tiêu đề, lưới) — bản đồng bộ với `workspace-v104.css` của ứng dụng.
 - `design-system/hak-enterprise-components.css` — thành phần dùng chung (khung, thanh công cụ, tab chi tiết).
 - `design-system/V10.4-LAYOUT.md` — quy ước bố cục danh mục dùng chung và tiêu chí kiểm tra 1366×768 / 1920×1080.
+- `docs/ARCHIVE_YEARBOOK_PATTERN.md` — mẫu **Lưu trữ theo năm**: sổ hồ sơ năm, sao lưu / đóng năm / xem năm cũ, định dạng file, quy tắc an toàn và QA (nguồn: HAK_XUATHANG_APP v2.10–2.11).
 - `docs/DESIGN_SYSTEM_V10_4.md` — tham chiếu các chủ đề `luxe`, `classic`, `neutral`, `champagne` và mẫu cha–con.
 
 ## Nguồn
