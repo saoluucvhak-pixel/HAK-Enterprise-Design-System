@@ -1,6 +1,6 @@
 {
   "name": "@hak/enterprise-design-system",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": false,
   "description": "HAK Enterprise design tokens and layout standard (luxe V10.3 / V10.4 reference)",
   "scripts": { "test": "node --test tests/*.test.js" },

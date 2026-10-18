@@ -8,3 +8,29 @@
 .hak-ui .hak-detail-tabs > * {white-space:nowrap}
 .hak-ui :focus-visible {outline:2px solid var(--brand);outline-offset:2px}
 @media(max-width:1100px){.hak-ui .hak-master-detail{grid-template-columns:1fr}}
+
+/* ---- Bổ sung V10.5: chuẩn UX (theo docs/UX_RULES.md). Chỉ dùng biến token, không mã màu cứng. ---- */
+/* Số liệu: căn phải, chữ số cùng độ rộng */
+.hak-ui .hak-num {text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+/* Bảng: tiêu đề cố định khi cuộn trong vùng bảng */
+.hak-ui .hak-table {border-collapse:collapse;width:100%}
+.hak-ui .hak-table th {position:sticky;top:0;z-index:1;background:var(--th);color:var(--ink);text-align:left;font-weight:600}
+.hak-ui .hak-table th, .hak-ui .hak-table td {padding:8px 10px;border-bottom:1px solid var(--line2, var(--line))}
+.hak-ui .hak-table tbody tr:hover {background:var(--hover)}
+.hak-ui .hak-table tr[aria-selected="true"] {background:var(--brandSoft)}
+/* Trạng thái rỗng / đang tải / lỗi */
+.hak-ui .hak-state {padding:24px;text-align:center;color:var(--mut-aa, var(--mut))}
+.hak-ui .hak-state[data-state="error"] {color:var(--red)}
+/* Chữ phụ đạt tương phản AA */
+.hak-ui .hak-muted {color:var(--mut-aa, var(--mut))}
+/* Form: lỗi ngay cạnh ô */
+.hak-ui .hak-field-error {color:var(--red);font-size:13px;margin-top:4px}
+.hak-ui [aria-invalid="true"] {border-color:var(--red)}
+/* Vùng bấm tối thiểu cho desktop */
+.hak-ui .hak-btn {min-height:32px;padding:0 12px;border-radius:8px;border:1px solid var(--ctl);background:var(--card);color:var(--ink);cursor:pointer}
+.hak-ui .hak-btn-primary {background:var(--brand);border-color:var(--brand);color:var(--onBrand)}
+.hak-ui .hak-btn:disabled {opacity:.55;cursor:not-allowed}
+/* Chỉ cho trình đọc màn hình */
+.hak-ui .hak-sr-only {position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+/* Tôn trọng người dùng giảm chuyển động */
+@media (prefers-reduced-motion:reduce){.hak-ui *, .hak-ui *::before, .hak-ui *::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
