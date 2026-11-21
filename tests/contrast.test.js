@@ -29,7 +29,7 @@ const ratio = (a, b) => { const x = lum(a), y = lum(b); return (Math.max(x, y) +
 const isHex = v => typeof v === 'string' && /^#[0-9a-f]{3}([0-9a-f]{3})?$/i.test(v);
 
 const PAIRS = [['ink', 'card'], ['ink', 'bg'], ['mut-aa', 'card'], ['mut-aa', 'bg'], ['mut-aa', 'th'],
-  ['brand', 'card'], ['onBrand', 'brand'], ['warnFg', 'warnBg'], ['okFg', 'okBg'], ['red', 'card']];
+  ['brand', 'card'], ['onBrand', 'brand'], ['warnFg', 'warnBg'], ['infoFg', 'infoBg'], ['warn', 'card'], ['okFg', 'okBg'], ['red', 'card']];
 
 for (const [name, T] of [['sáng', LIGHT], ['tối', DARK]]) {
   test(`luxe ${name}: chữ đạt AA ≥ 4,5:1`, () => {
@@ -40,3 +40,8 @@ for (const [name, T] of [['sáng', LIGHT], ['tối', DARK]]) {
     }
   });
 }
+
+test('luxe tối: có token cảnh báo/thông tin riêng (không thừa hưởng nền sáng của skin) và đều là nền tối', () => {
+  for (const k of ['warnBg', 'warnBd', 'warnFg', 'warn', 'infoBg', 'infoBd', 'infoFg']) assert.ok(isHex(skinDark[k]), `thiếu ${k} trong [data-skin="luxe"][data-theme="dark"]`);
+  for (const k of ['warnBg', 'infoBg']) assert.ok(lum(DARK[k]) < 0.05, `${k} trong luxe tối phải là nền tối, đang là ${DARK[k]}`);
+});

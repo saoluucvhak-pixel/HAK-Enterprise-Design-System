@@ -2,7 +2,7 @@
    Chủ đề hiệu lực:
      sáng = :root + [data-skin="luxe"]
      tối  = :root + [data-theme="dark"] + [data-skin="luxe"][data-theme="dark"]
-   Giữ nguyên giá trị gốc; chỉ thêm --mut-aa cho chữ phụ đạt tương phản ≥ 4,5:1 trên nền sáng (xem tests/contrast.test.js). */
+   Giữ nguyên giá trị gốc; chỉ thêm --mut-aa, và token cảnh báo/thông tin cho luxe tối (trước đó luxe tối thừa hưởng nền sáng của skin) cho chữ phụ đạt tương phản ≥ 4,5:1 trên nền sáng (xem tests/contrast.test.js). */
 :root{--brand:#0e7c86;--brand2:#14a3ad;--brandH:#0b6870;--brandA:#095961;--brandSoft:rgba(14,124,134,.12);--onBrand:#fff;
 --bg:#f3f6fa;--card:#fff;--ink:#14212b;--mut:#6b7a8c;--line:#e3e9f0;--line2:#edf1f4;--ctl:#d3dce2;--th:#f5f8fa;--hover:#f1f7f8;--field:#fff;
 --sb:linear-gradient(180deg,#0f2740 0%,#0a1c30 100%);--sbText:#b8c7d9;--sbMut:#7d8fa3;--sbLine:rgba(255,255,255,.08);
@@ -36,6 +36,7 @@ color-scheme:light}
 [data-skin="luxe"][data-theme="dark"]{--brand:#d4b06a;--brand2:#e3c88f;--brandH:#e3c88f;--brandA:#efd9a8;--brandSoft:rgba(212,176,106,.16);--onBrand:#1b1405;
 --bg:#0b101a;--card:#121926;--ink:#e8e6df;--mut:#9aa0ad;--line:#232c3d;--line2:#1b2434;--ctl:#344058;--th:#18202f;--hover:#19222f;--field:#0e1420;
 --sb:linear-gradient(180deg,#090e19 0%,#060a12 100%);
+--warnBg:#2a2213;--warnBd:#5a4520;--warnFg:#f0cf8f;--warn:#f0b35a;--infoBg:#18243a;--infoBd:#2c3d5c;--infoFg:#c3d3f0;
 --okBg:rgba(212,176,106,.14);--okFg:#e3c88f;--focus:rgba(212,176,106,.32);--edit:#d4b06a;--editBg:#251f12;
 --hero:radial-gradient(1200px 300px at 90% -20%,rgba(212,176,106,.14),transparent 60%),linear-gradient(120deg,#090e19,#1a2b49);
 --c1:rgba(212,176,106,.16);--c1f:#e3c88f;--deep:#090e19}
